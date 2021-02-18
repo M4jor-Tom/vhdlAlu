@@ -41,20 +41,13 @@ signal A1in: std_logic_vector(3 downto 0);
 signal B0in: std_logic_vector(3 downto 0);
 signal B1in: std_logic_vector(3 downto 0);
 
---signal S0out: std_logic_vector(4 downto 0);
---signal S1out: std_logic_vector(4 downto 0);
-
 begin
 
 	A0in <= A(3 downto 0);
 	B0in <= B(3 downto 0);
 	
-	--S(3 downto 0) <= S0out;
-	
 	A1in <= A(7 downto 4);
 	B1in <= A(7 downto 4);
-	
-	--S(7 downto 4) <= S1out;
 
 	a4_0: add4 port map(
 		A => A0in,
