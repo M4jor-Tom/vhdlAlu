@@ -48,6 +48,14 @@ component add4 is
 	);
 end component;
 
+component xor4 is
+	port(
+		A,B: in std_logic_vector(3 downto 0);
+
+		S: out std_logic_vector(3 downto 0)
+	);
+end component;
+
 begin
 	
 	muxin(7 downto 0) <= "000"&S_add;
@@ -68,6 +76,13 @@ begin
 		Ci => '0',
 
 		S => S_add
+	);
+
+	x4: xor4 port map(
+		A => A,
+		B => B,
+
+		S => S_xor
 	);
 
 end structural;
