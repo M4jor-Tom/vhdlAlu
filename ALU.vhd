@@ -24,6 +24,25 @@ end ALU_8;
 
 architecture structural of ALU_8 is
 
+signal S_add: std_logic_vector(4 downto 0);
+
+component add4 is
+	port(
+		A,B: in std_logic_vector(3 downto 0);
+		Ci: in std_logic;
+
+		S: out std_logic_vector(4 downto 0)
+	);
+end component;
+
 begin
+
+	a4: add4 port map(
+		A => A,
+		B => B,
+		Ci => '0',
+
+		S => S_add
+	);
 
 end structural;
